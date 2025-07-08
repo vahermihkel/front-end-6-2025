@@ -1,0 +1,10 @@
+[
+  {"nimi": "Ferrari", "hind": 100000, "aktiivne": false, "pilt": "https://carwow-uk-wp-1.imgix.net/2025-Ferrari-F80-front-static-lead.png"},
+  {"nimi": "Ford", "hind": 50000, "aktiivne": true, "pilt": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRVMMSqnkFsRVSdo8ejj9ZFGbBw5eQ3xtNQyg&s"},
+  {"nimi": "Lamborghini", "hind": 200000, "aktiivne": false, "pilt": "https://hips.hearstapps.com/hmg-prod/images/2024-lamborghini-reveulto-104-67aa3276672fb.jpg"},
+  {"nimi": "BMW", "hind": 60000, "aktiivne": true, "pilt": "https://www.animeoutline.com/wp-content/uploads/2024/04/sports_car_drawing_body_coloring.png"},
+  {"nimi": "Audi", "hind": 550000, "aktiivne": true, "pilt": "https://uploads.audi-mediacenter.com/system/production/media/124870/images/8e324e9fa9b315a9c403876fc345e6836df35da5/A242759_web_2880.jpg"},
+  {"nimi": "Mercedes", "hind": 90000, "aktiivne": true, "pilt": "https://jmvmotors.ee/wp-content/uploads/2024/04/Mercedes-Benz-E-klass_diagonal-e1713956647605-1024x742.png"},
+  {"nimi": "Tesla", "hind": 800000, "aktiivne": true, "pilt": "https://www.animeoutline.com/wp-content/uploads/2024/04/sports_car_drawing_body_coloring.png"},
+  {"nimi": "Subaru", "hind": 700000, "aktiivne": true, "pilt": "https://hips.hearstapps.com/hmg-prod/images/img-7648b-6582e7d877113.jpg"}
+]

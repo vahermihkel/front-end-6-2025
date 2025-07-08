@@ -1,6 +1,7 @@
 import { useState } from "react";
 import laigitud from "../assets/laigitud.svg";
 import mittelaigitud from "../assets/mittelaigitud.svg";
+import Karussell from "../components/Karussell";
 
 // rfce --> snippets. loob Reactis komponendi
 
@@ -32,6 +33,8 @@ function Avaleht() {
 
   return (
     <div>
+      <Karussell /> 
+      <br />
       {like === true && <img onClick={() => setLike(false)} src={laigitud} alt="" />}
       {like === false && <img onClick={() => setLike(true)} src={mittelaigitud} alt="" />}
 
@@ -50,6 +53,7 @@ function Avaleht() {
 // Kui saadetakse kaasa parameeter, siis tuleb onClick sees teha: onClick={() => setKogus(0))}
 // Kui ei saadeta, siis võib teha: onClick={nulli} , aga võib ka teha: onClick={() => nulli()}
 
+// VALE:
 // Kui panen nii: onClick={setKogus(0)}   või  onClick={suurenda()}, siis pannakse HTMLs
 // funktsioon koheselt käima, ilma klikki ootamata. siis tekib lõputu loop.
 
