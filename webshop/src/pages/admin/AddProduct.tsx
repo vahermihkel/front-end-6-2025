@@ -1,4 +1,4 @@
-import AdminHome from "./AdminHome";
+import AdminHome from "./AdminHome.tsx";
 import productsFromFile from "../../data/products.json";
 import { useRef, useState } from "react";
 import { useTranslation } from "react-i18next";
@@ -8,15 +8,23 @@ function AddProduct() {
   const [products, setProducts] = useState(productsFromFile.slice());
   const [unique, setUnique] = useState(true);
 
-  const idRef = useRef();
-  const titleRef = useRef();
-  const priceRef = useRef();
-  const categoryRef = useRef();
-  const imageRef = useRef();
-  const rateRef = useRef();
-  const countRef = useRef();
+  const idRef = useRef<HTMLInputElement>(null);
+  const titleRef = useRef<HTMLInputElement>(null);
+  const priceRef = useRef<HTMLInputElement>(null);
+  const categoryRef = useRef<HTMLInputElement>(null);
+  const imageRef = useRef<HTMLInputElement>(null);
+  const rateRef = useRef<HTMLInputElement>(null);
+  const countRef = useRef<HTMLInputElement>(null);
 
   const add = () => {
+    if (idRef.current === null || titleRef.current === null ||
+      priceRef.current === null || categoryRef.current === null ||
+      imageRef.current === null || rateRef.current === null ||
+      countRef.current === null
+    ) {
+      return;
+    }
+
     if (idRef.current.value === "") {
       alert("Tühja id'ga ei saa sisestada!");
       return;
@@ -47,14 +55,15 @@ function AddProduct() {
     }
 
     productsFromFile.push({
-      id: idRef.current.value,
+      id: Number(idRef.current.value),
       title: titleRef.current.value,
-      price: priceRef.current.value,
+      price: Number(priceRef.current.value),
+      description: "",
       category: categoryRef.current.value,
       image: imageRef.current.value,
       rating: {
-        rate: rateRef.current.value,
-        count: countRef.current.value,
+        rate: Number(rateRef.current.value),
+        count: Number(countRef.current.value),
       }
     });
 
@@ -70,7 +79,11 @@ function AddProduct() {
   };
 
   const isUnique = () => { 
-    const answer = productsFromFile.find(product => product.title === titleRef.current.value);
+    const titleValue = titleRef.current;
+    if (titleValue === null) {
+      return;
+    }
+    const answer = productsFromFile.find(product => product.title === titleValue.value);
     if(answer === undefined){
       setUnique(true);
     } else {

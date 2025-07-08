@@ -4,6 +4,7 @@ import {Link} from 'react-router-dom'
 import { ToastContainer, toast } from 'react-toastify';
 import Button from '@mui/material/Button';
 import ButtonGroup from "@mui/material/ButtonGroup";
+import { Product } from "../../models/Product";
 
 
 function HomePage() {
@@ -41,14 +42,14 @@ function HomePage() {
     }
 
 // Search product category
-     const filterByCategory = (categoryClicked) => {
+     const filterByCategory = (categoryClicked: string) => {
         const answer = productsFromFile.filter(product => product.category === categoryClicked);
         setProducts(answer);
     }
 
  // Add to cart
-  const addToCart = (item) => {
-    const localBasket = JSON.parse(localStorage.getItem("cart")) || [];
+  const addToCart = (item: Product) => {
+    const localBasket = JSON.parse(localStorage.getItem("cart") || "[]");
     localBasket.push(item);
     localStorage.setItem("cart", JSON.stringify(localBasket));
     toast.success("Item added to your card!");

@@ -9,10 +9,10 @@ import { Link } from "react-router-dom";
 function MaintainProducts() {
   const { t } = useTranslation();
   const [products, setProducts] = useState(productsFromFile);
-  const searchRef = useRef();
+  const searchRef = useRef<HTMLInputElement>(null);
 
 
-  const deleteProduct = (index) => {
+  const deleteProduct = (index: number) => {
       const deletedProduct = productsFromFile[index];
       productsFromFile.splice(index, 1);
       setProducts(productsFromFile.slice());
@@ -20,8 +20,12 @@ function MaintainProducts() {
     };
 
   const search = () => {
+    const inputValue = searchRef.current;
+    if (inputValue === null) {
+      return;
+    }
     const result = productsFromFile.filter(product =>
-      product.title.toLowerCase().includes(searchRef.current.value.toLowerCase())
+      product.title.toLowerCase().includes(inputValue.value.toLowerCase())
     );
     setProducts(result);
   };

@@ -14,7 +14,7 @@ function HaldaHinnad() {
     }
 
     hinnadFailist.push({
-      "number": hindRef.current.value, 
+      "number": Number(hindRef.current.value), 
       "sonana": sonaRef.current.value
     });
     setHinnad(hinnadFailist.slice());

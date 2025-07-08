@@ -2,10 +2,11 @@ import Button from "@mui/material/Button";
 import { useState } from "react"
 import { useTranslation } from "react-i18next";
 import trash from '../../assets/trash.png'
+import { Product } from "../../models/Product";
 
 
 function Cart() {
-  const [products, setProducts] = useState(JSON.parse(localStorage.getItem("cart")) || []);
+  const [products, setProducts] = useState<Product[]>(JSON.parse(localStorage.getItem("cart") || "[]"));
   const { t } = useTranslation(); // votan LocalStotag-st seejarel jutumargid maha
 
   const empty = () => {
@@ -13,7 +14,7 @@ function Cart() {
     localStorage.setItem("cart", JSON.stringify([]));
   }
   
-  const deleteItem = (index) => {
+  const deleteItem = (index: number) => {
     products.splice(index, 1); 
     setProducts(products.slice());
     localStorage.setItem("cart", JSON.stringify(products));

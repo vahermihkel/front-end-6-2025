@@ -29,7 +29,7 @@ function HaldaAutod() {
 
     andmed.push({
       "nimi": nimiRef.current.value, 
-      "hind": hindRef.current.value, 
+      "hind": Number(hindRef.current.value), 
       "aktiivne": aktiivneRef.current.checked, // true või false 
       "pilt": piltRef.current.value
     });

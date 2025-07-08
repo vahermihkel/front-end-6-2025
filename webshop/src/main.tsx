@@ -2,9 +2,9 @@ import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './index.css'
-import App from './App.jsx'
+import App from './App.js'
 import { BrowserRouter } from "react-router-dom"
-import './i18n';
+import './i18n.js';
 
 // let mutuuja = 1
 // muutuja = 2
@@ -12,13 +12,15 @@ import './i18n';
 // .carousel { width: 300px }
 
 
-createRoot(document.getElementById('root')).render(
+createRoot(document.getElementById('root')!).render(
   <StrictMode>
     <BrowserRouter>
       <App />
     </BrowserRouter>
   </StrictMode>,
 )
+
+// https://github.com/vahermihkel/front-end-6-2025
 
 // 4 päeva
 // 5. 03.06 - React algus, pages, navigeerimine
@@ -34,7 +36,7 @@ createRoot(document.getElementById('root')).render(
 // 13. T 01.07 otsing, unikaalsuse kontroll, kokkuarvutus, API, kasutajad ----> koju inglise keelne veebipood
 // 14. R 04.07 bootstrap, emaili saatmine, MUI, kujundus, kaart
 // 15. T 08.07 Webshop --> ülevaatamine
-// 16. R 11.07
+// 16. R 11.07 andmebaas
 // 17. T 15.07
 // Töötukassale öelda, et viimane päev on 24.07 ja allkirjalehele paneme ka 24.07
 // 18. T 29.07 --> lõpuprojekti esitlemine  2ak/h  9.00-10.30
